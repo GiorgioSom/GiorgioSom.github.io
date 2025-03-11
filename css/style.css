@@ -141,8 +141,40 @@ img[src*="icq.JPG"] {
 
 /* Divider styling */
 hr {
-    border: 1px solid #999;
+    border: 1px solid "#000099";
     margin: 20px 0;
+}
+
+/* GitHub Pages Footer */
+.geocities-footer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.guestbook-links {
+    text-align: left;
+    margin-left: 20px;
+    margin: 10px 0;
+    font-size: 0.9em;
+    font-family: monospace;
+}
+
+.guestbook-links a {
+    color: #000099;
+    margin: 0 5px;
+    padding: 3px 8px;
+    border: 1px solid #000099;
+    border-radius: 4px;
+}
+
+.guestbook-links a:hover {
+    background: #000099;
+    color: white;
+    text-decoration: none;
 }
 
 /* Responsive design */
@@ -161,7 +193,11 @@ hr {
     }
 
     h1 {
-        font-size: 2em; /* Increased font size */
+        font-size: 2em; /* Adjusted font size */
+    }
+
+    .rainbow-title {
+        font-size: 3em; /* Adjusted font size */
     }
 
     .images-stack {
@@ -170,5 +206,14 @@ hr {
 
     img {
         margin: 5px 0;
+    }
+
+    .center-content img[src="assets/AGSme3.png"] {
+        width: 70%; /* Scale down the profile picture */
+        height: auto;
+    }
+
+    .geocities-banner {
+        max-width: 280px;
     }
 }
