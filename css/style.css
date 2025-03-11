@@ -1,5 +1,5 @@
 /* Base styles */
-body {
+html {
     background-image: url('../assets/background100x100.png');
     background-repeat: repeat;
     margin: 0;
@@ -60,8 +60,8 @@ font[color="#006600"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    margin: 20px auto;
+    gap: 5px;
+    margin: 10px auto;
     width: 100%;
     max-width: 400px;
 }
@@ -241,5 +241,11 @@ hr {
 
     .geocities-banner {
         max-width: 280px;
+    }
+
+    /* Add these new styles */
+    center b {
+        font-size: 14px;
+        gap: 5px;
     }
 }
