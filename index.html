@@ -7,6 +7,7 @@
     <title>AGS's Web portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="./assets/poppy.png" type="image/x-icon">
+    <script src="js/win95.js" defer></script>
 </head>
 <body>
     <audio autoplay loop>
@@ -30,8 +31,23 @@
         <p class="blue-text">Here are some projects I've worked on:</p>
 
         <div class="images-stack">
-            <a href="https://github.com/GiorgioSom/Hacko" target="_blank" rel="noopener noreferrer">
-                <img src="assets/Hacko.png" height="80" width="400" alt="Hacko">
+            <!-- Remove the nested images-stack div -->
+            <!-- Hacko Project -->
+            <div class="project-container">
+                <img src="assets/Hacko.png" 
+                     onclick="showProject('hacko-window')" 
+                     class="project-banner" 
+                     alt="Hacko">
+            </div>
+            
+            <!-- Convert your other project links to this format -->
+            <div class="project-container">
+                <img src="assets/LunaDue.png" 
+                     onclick="showProject('luna-window')" 
+                     class="project-banner" 
+                     alt="3ee">
+            </div>
+
             </a>
             <a href="https://github.com/GiorgioSom/TinyGuests_3ee" target="_blank" rel="noopener noreferrer">
                 <img src="assets/LunaDue.png" height="80" width="400" alt="3ee">
@@ -96,6 +112,19 @@
         <div class="guestbook-links">
             <a href="https://github.com/GiorgioSom/GiorgioSom.github.io">View Source</a>
             <a href="https://github.com/GiorgioSom/GiorgioSom.github.io/issues">Leave Feedback</a>
+        </div>
+    </div>
+
+    <div id="hacko-window" class="project-window hidden">
+        <div class="window-titlebar">
+            <div class="titlebar-text">Hacko.exe</div>
+            <button class="close-button" onclick="closeProject('hacko-window')">×</button>
+        </div>
+    </div>
+    <div id="luna-window" class="project-window hidden">
+        <div class="window-titlebar">
+            <div class="titlebar-text">Luna.exe</div>
+            <button class="close-button" onclick="closeProject('luna-window')">×</button>
         </div>
     </div>
 </body>

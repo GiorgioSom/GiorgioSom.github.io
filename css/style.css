@@ -203,6 +203,75 @@ hr {
     text-decoration: none;
 }
 
+/* Windows 95 Styles */
+.project-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #c0c0c0;
+    border: 2px outset #ffffff;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    min-width: 200px;
+    min-height: 150px;
+    z-index: 1000;
+    touch-action: none;
+    user-select: none;
+}
+
+.window-titlebar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 3px 2px 3px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    touch-action: none;
+}
+
+.titlebar-text {
+    flex-grow: 1;
+    font-family: "MS Sans Serif", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 4px;
+}
+
+.close-button {
+    width: 16px;
+    height: 14px;
+    background: #ff0000;
+    border: 1px outset #ffffff;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    margin-right: 2px;
+    padding: 0;
+}
+
+.close-button:active {
+    border-style: inset;
+}
+
+.project-banner {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.project-banner:hover {
+    transform: scale(1.02);
+}
+
+.hidden {
+    display: none;
+}
+
 /* Responsive design */
 @media screen and (max-width: 600px) {
     body {
@@ -251,5 +320,20 @@ hr {
     
     center b img {
         width: 15%;  /* Preserve original aspect ratio */
+    }
+
+    .project-window {
+        width: 60%;
+        min-height: 30%;
+    }
+    
+    .window-titlebar {
+        padding: 6px 4px;
+    }
+    
+    .close-button {
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
     }
 }
