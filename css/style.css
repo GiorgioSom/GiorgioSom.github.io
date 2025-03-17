@@ -75,7 +75,6 @@ font[color="#006600"] {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 4px;
 }
 
@@ -204,30 +203,179 @@ hr {
 }
 
 /* Windows 95 Styles */
+/* Windows 95 Styles */
 .project-window {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 300px;
+    height: 250px;
     background: #c0c0c0;
-    border: 2px outset #ffffff;
+    border: 3px outset #ffffff;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    min-width: 200px;
-    min-height: 150px;
     z-index: 1000;
     touch-action: none;
     user-select: none;
+    animation: windowOpen 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
 }
 
 .window-titlebar {
-    background: linear-gradient(90deg, #000080, #1084d0);
     color: white;
-    padding: 3px 2px 3px 3px;
+    padding: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: move;
     touch-action: none;
+    flex-shrink: 0;
+}
+
+.window-content {
+    flex: 1;
+    border: 2px inset #ffffff;
+    overflow: hidden;
+}
+
+.window-scroll-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.project-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-info {
+    padding: 20px;
+    font-family: "MS Sans Serif", Arial, sans-serif;
+}
+
+.project-title {
+    font-size: 32px;
+    margin: 0 0 20px 0;
+    color: var(--theme-color);
+    text-align: center;
+    font-weight: bold;
+}
+
+.project-layout {
+    min-height: 100%;
+    padding: 20px;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.tech-badge {
+    background: var(--theme-color);
+    color: white;
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 2px;
+}
+
+
+.project-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid var(--theme-color);
+    transition: transform 0.2s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.project-details {
+    background: #f0f0f0;
+    padding: 20px;
+    margin: 25px -20px;
+    border-top: 2px solid #d0d0d0;
+    border-bottom: 2px solid #d0d0d0;
+}
+
+.project-details h2 {
+    color: var(--theme-color);
+    font-size: 16px;
+    margin: 0 0 10px 0;
+}
+
+.features-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.features-list li {
+    padding: 5px 0 5px 20px;
+    position: relative;
+}
+
+.features-list li:before {
+    content: '►';
+    position: absolute;
+    left: 0;
+    color: var(--theme-color);
+}
+
+
+.github-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--theme-color);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 20px;
+    border: 2px outset var(--theme-color);
+}
+
+.github-link:active {
+    border-style: inset;
+}
+
+/* Windows 95 Scrollbar Style */
+.window-scroll-content::-webkit-scrollbar {
+    width: 16px;
+}
+
+.window-scroll-content::-webkit-scrollbar-track {
+    background: #c0c0c0;
+    border: 1px inset #ffffff;
+}
+
+.window-scroll-content::-webkit-scrollbar-thumb {
+    background: var(--theme-color);
+    border: 1px outset #ffffff;
 }
 
 .titlebar-text {
@@ -236,7 +384,9 @@ hr {
     font-size: 12px;
     font-weight: bold;
     padding-left: 4px;
+    text-shadow: 1px 1px #000000;
 }
+
 
 .close-button {
     width: 16px;
@@ -323,8 +473,9 @@ hr {
     }
 
     .project-window {
-        width: 60%;
-        min-height: 30%;
+        width: 90vw;
+        height: 80vh;
+        max-height: 600px;
     }
     
     .window-titlebar {
@@ -335,5 +486,19 @@ hr {
         width: 20px;
         height: 20px;
         font-size: 16px;
+    }
+}
+
+@keyframes windowOpen {
+    0% {
+        transform: translate(-50%, -50%) scale(0.95);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
     }
 }
